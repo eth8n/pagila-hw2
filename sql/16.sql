@@ -18,4 +18,5 @@ FROM film
 LEFT JOIN inventory USING (film_id)
 LEFT JOIN rental USING (inventory_id)
 LEFT JOIN payment USING (rental_id)
-GROUP BY film.title;
+GROUP BY film.title
+ORDER BY revenue DESC, film.title ASC;
